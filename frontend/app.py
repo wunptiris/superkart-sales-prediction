@@ -6,21 +6,21 @@ import requests
 # Base URL of the Flask backend
 BACKEND_URL = "http://backend:7860"
 
-st.title("Superkart Sales Prediction")
+st.title("🛒🛒 Superkart Sales Prediction 🛒🛒")
 
 # Section for online prediction
 st.subheader("Online Prediction")
 
 # Input fields for product and store data
-Product_Weight = st.number_input("Product Weight", min_value=0.0, value=12.66)
+Product_Weight = st.number_input("Product Weight", min_value=0.0, value=10.0)
 Product_Sugar_Content = st.selectbox("Product Sugar Content", ["Low Sugar", "Regular", "No Sugar"])
-Product_Allocated_Area = st.number_input("Product Allocated Area", min_value=0.0, max_value=1.0, value=0.027)
-Product_MRP = st.number_input("Product MRP", min_value=0.0, value=117.08)
+Product_Allocated_Area = st.number_input("Product Allocated Area", min_value=0.0, max_value=1.0, value=0.01)
+Product_MRP = st.number_input("Product MRP", min_value=0.0, value=100.0)
 Store_Size = st.selectbox("Store Size", ["High", "Medium", "Small"])
 Store_Location_City_Type = st.selectbox("Store Location City Type", ["Tier 1", "Tier 2", "Tier 3"])
 Store_Type = st.selectbox("Store Type", ["Departmental Store", "Food Mart", "Supermarket Type1", "Supermarket Type2"])
 Product_Id_char = st.selectbox("Product ID Category", ["FD", "DR", "NC"])
-Store_Age_Years = st.number_input("Store_Age_Years", min=0, max=30.00)
+Store_Age_Years = st.number_input("Store_Age_Years", min=0, max=50.00)
 Product_Type_Category = st.selectbox("Product Type Category", ["Perishables", "Non Perishables"])
 
 # convert user input into a Dataframe
@@ -62,7 +62,7 @@ if uploaded_file is not None:
         if st.button("Run Batch Prediction"):
             # Convert DataFrame to list of dictionaries for JSON payload
             batch_data_json = batch_data_df.to_dict(orient="records")
-            
+
             # Make POST request to the batch prediction endpoint
             batch_response = requests.post(f"{BACKEND_URL}/v1/batch_predict", json=batch_data_json)
 
