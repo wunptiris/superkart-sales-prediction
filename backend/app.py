@@ -7,7 +7,7 @@ import streamlit as st  # For creating the web app
 from flask import Flask, request, jsonify  # For creating the Flask API
 
 # Initialize Flask app with a name
-superkart_api = Flask("SuperKart Sales Prediction") #Complete the code to define the name of the app
+superkart_api = Flask("🛒🛒 SuperKart Sales Prediction 🛒🛒") #Complete the code to define the name of the app
 
 # Load the trained churn prediction model
 model = joblib.load(saved_model_path) #Complete the code to define the location of the serialized model
@@ -55,7 +55,7 @@ def predict_sales():
 def batch_predict():
     # Get JSON data from the request
     data = request.get_json()
-    
+
     # Convert the list of dictionaries to a DataFrame
     input_data = pd.DataFrame(data)
 
