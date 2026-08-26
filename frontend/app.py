@@ -20,7 +20,7 @@ Store_Size = st.selectbox("Store Size", ["High", "Medium", "Small"])
 Store_Location_City_Type = st.selectbox("Store Location City Type", ["Tier 1", "Tier 2", "Tier 3"])
 Store_Type = st.selectbox("Store Type", ["Departmental Store", "Food Mart", "Supermarket Type1", "Supermarket Type2"])
 Product_Id_char = st.selectbox("Product ID Category", ["FD", "DR", "NC"])
-Store_Age_Years = st.number_input("Store_Age_Years", min=0, max=50.00)
+Store_Age_Years = st.number_input("Store_Age_Years", min_value=0, max_value=50.00)
 Product_Type_Category = st.selectbox("Product Type Category", ["Perishables", "Non Perishables"])
 
 # convert user input into a Dataframe
